@@ -9,7 +9,7 @@ from model.summarizer import Summarizer
 from builder.indexer import process_dir as index_process
 
 if __name__ == "__main__":
-    indexer = index_process("../data/chunks")
+    indexer = index_process("data/chunks")
     if not indexer:
         print("[Error] No valid chunks to index. Please check your PDF extraction and chunking steps.")
         exit(1)
@@ -20,8 +20,10 @@ if __name__ == "__main__":
     summarizer = Summarizer()
     
     question = input("Ask a question: ")
-    context = retriever.retrieve(question)
-    prompt = tuner.build_prompt(question, context)
-    response = llm.generate(prompt)
-    summary = summarizer.summarize(response)
-    print("Answer:", summary)
+    answers = solver.solve(question, retriever)
+    for ans in answers:
+        prompt = tuner.build_prompt(ans['sub_question'], ans['context'])
+        response = llm.generate(prompt)
+        summary = summarizer.summarize(response)
+        print(f"Sub-question: {ans['sub_question']}")
+        print(f"Answer: {summary}\n")

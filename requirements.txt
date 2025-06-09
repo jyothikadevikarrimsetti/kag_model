@@ -11,3 +11,11 @@ matplotlib
 flask
 pytesseract
 pdf2image
+pillow
+streamlit
+numpy 
+nltk 
+scikit-learn
+requests
+pyvis
+spacy

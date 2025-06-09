@@ -1,7 +1,9 @@
 """
 Decomposes questions into sub-steps for complex queries.
 """
+import re
 class Planner:
     def plan(self, question):
-        # Dummy: split by 'and' for sub-questions
-        return [q.strip() for q in question.split('and')]
+        # Split by 'and', 'then', or '?', and clean up
+        parts = re.split(r'\band\b|\bthen\b|\?', question, flags=re.IGNORECASE)
+        return [q.strip() for q in parts if q.strip()]

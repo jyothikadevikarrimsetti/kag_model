@@ -9,7 +9,7 @@ from builder.graph_builder import process_dir as graph_process
 from builder.indexer import process_dir as index_process
 
 if __name__ == "__main__":
-    batch_extract("data/raw_pdfs", "data/extracted_texts")
+    # batch_extract("data/raw_pdfs", "data/extracted_texts")
     chunk_process("data/extracted_texts", "data/chunks")
     meta_process("data/chunks", "data/output_json")
     align_process("data/output_json", "data/output_json")

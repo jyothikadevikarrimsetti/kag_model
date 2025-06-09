@@ -28,4 +28,4 @@ def process_dir(input_dir, output_dir):
                 f.write('\n---\n'.join(chunks))
 
 if __name__ == "__main__":
-    process_dir("../data/extracted_texts", "../data/chunks")
+    process_dir("data/extracted_texts", "data/chunks")

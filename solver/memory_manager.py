@@ -8,3 +8,7 @@ class MemoryManager:
         self.memory.append(step)
     def get_all(self):
         return self.memory
+    def clear(self):
+        self.memory = []
+    def last(self):
+        return self.memory[-1] if self.memory else None

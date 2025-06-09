@@ -37,5 +37,5 @@ def batch_extract(input_dir, output_dir):
             )
 
 if __name__ == "__main__":
-    # batch_extract("data/raw_pdfs", "data/extracted_texts")
+    batch_extract("data/raw_pdfs", "data/extracted_texts")
     pass
