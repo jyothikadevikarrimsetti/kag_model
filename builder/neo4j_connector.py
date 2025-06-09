@@ -20,7 +20,6 @@ class Neo4jConnector:
             session.run(f"CREATE (n:{label} $props)", props=properties)
     # Add more methods as needed
 
-
 if __name__ == "__main__":
     db = Neo4jConnector()
     db.create_node('Test', {'name': 'Example'})
