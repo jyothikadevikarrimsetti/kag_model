@@ -1,0 +1,13 @@
+openai
+neo4j
+pdfplumber
+spacy
+scikit-learn
+faiss-cpu
+pinecone-client
+python-dotenv
+networkx
+matplotlib
+flask
+pytesseract
+pdf2image
